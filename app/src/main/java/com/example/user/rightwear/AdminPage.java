@@ -5,14 +5,14 @@ import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+ 	
 
-import java.util.Date;
+import java.util.*;
 
 import static java.lang.System.out;
 
 public class AdminPage extends AppCompatActivity {
     Order1 order1;
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_page);
@@ -24,7 +24,7 @@ public class AdminPage extends AppCompatActivity {
         if(res.getCount()==0)
         {
             //message
-            showMessage("Error","No data to show");
+            showMessage("Error","No data Found");
             return;
         }
         else
@@ -49,7 +49,7 @@ public class AdminPage extends AppCompatActivity {
                 buffer.append("Ankle Hem:"+res.getString(12)+"\n");
                 buffer.append("Upper Bust:"+res.getString(13)+"\n\n");
                 // buffer.append("DOB:"+res.getString(4)+"\n\n");
-                out.print("Date is:"+ "java.sql.Date");
+                out.print("Date is:"+ "java.sql.Date");//to view current date
             }
             //show all data
             showMessage("Data ",buffer.toString());
